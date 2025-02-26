@@ -255,6 +255,65 @@
       transform: translateY(0);
     }
   }
+
+  /* Media Queries for responsiveness */
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      padding: 40px;
+    }
+
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .social-links a {
+      padding: 10px 20px;
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+    }
+
+    .project-card {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    body {
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .social-links a {
+      padding: 8px 16px;
+      font-size: 1rem;
+    }
+
+    section h2 {
+      font-size: 2rem;
+    }
+
+    .project-card {
+      padding: 15px;
+      width: 100%;
+    }
+  }
+
 </style>
 
 </head>
