@@ -2,323 +2,215 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Oliver Evans - Portfolio</title>
     <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-  }
-
-  body {
-    background-color: #121212;
-    color: #fff;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    font-size: 16px;
-    font-family: 'Arial', sans-serif;
-  }
-
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    background: #1e1e1e;
-    padding: 60px;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-    position: relative;
-    top: 50px;
-    z-index: 2;
-    animation: fadeInUp 1s ease-out;
-    will-change: transform, opacity;
-  }
-
-  .profile-pic {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 6px solid #0073e6;
-    margin-right: 50px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    will-change: transform, box-shadow;
-  }
-
-  .profile-pic:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 115, 230, 0.7);
-  }
-
-  .text-content {
-    flex: 1;
-  }
-
-  h1 {
-    font-size: 3rem;
-    color: #0073e6;
-    animation: fadeIn 1.5s ease-in-out;
-    will-change: opacity, transform;
-  }
-
-  p {
-    font-size: 1.4rem;
-    margin: 15px 0;
-    line-height: 1.6;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-    will-change: opacity, transform;
-  }
-
-  .social-links {
-    margin-top: 20px;
-    opacity: 0;
-    animation: fadeIn 2.5s forwards;
-  }
-
-  .social-links a {
-    display: inline-block;
-    background: #0073e6;
-    color: #fff;
-    padding: 12px 24px;
-    margin-right: 12px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s, transform 0.3s;
-  }
-
-  .social-links a:hover {
-    background: #005bb5;
-    transform: scale(1.1);
-  }
-
-  section {
-    padding: 80px 20px;
-    text-align: center;
-    margin-top: 40px;
-    transition: transform 0.3s ease;
-    will-change: transform;
-  }
-
-  section:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-  }
-
-  #about, #skills, #contact {
-    background: #2c2c2c;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    padding: 40px;
-    opacity: 0;
-    animation: fadeInUp 1.5s 1.5s forwards;
-    will-change: opacity, transform;
-  }
-
-  section h2 {
-    font-size: 2.6rem;
-    margin-bottom: 25px;
-    color: #0073e6;
-  }
-
-  section p {
-    font-size: 1.3rem;
-    line-height: 1.7;
-    margin-bottom: 20px;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  ul li {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    text-transform: capitalize;
-  }
-
-  ul li::before {
-    content: '✔️';
-    margin-right: 10px;
-    color: #0073e6;
-  }
-
-  .project-card {
-    background: #2c2c2c;
-    padding: 25px;
-    margin: 25px;
-    border-radius: 12px;
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: inline-block;
-    width: 45%;
-    vertical-align: top;
-    opacity: 0;
-    animation: fadeInUp 2s forwards;
-    will-change: transform, opacity;
-  }
-
-  .project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
-  }
-
-  .project-card h3 {
-    color: #0073e6;
-    font-size: 1.9rem;
-    margin-bottom: 12px;
-  }
-
-  .project-card p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-
-  .project-card button {
-    background-color: #0073e6;
-    padding: 12px 24px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  .project-card button:hover {
-    background-color: #005bb5;
-  }
-
-  pre {
-    background-color: #333;
-    padding: 15px;
-    border-radius: 5px;
-    overflow-x: auto;
-    margin: 25px 0;
-    text-align: left;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  }
-
-  code {
-    font-family: 'Courier New', Courier, monospace;
-    color: #fff;
-    line-height: 1.5;
-  }
-
-  .project-details {
-    background: #333;
-    border-radius: 15px;
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
-    padding: 40px;
-    margin: 40px 0;
-  }
-
-  .project-details button {
-    background-color: #0073e6;
-    padding: 12px 24px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  .project-details button:hover {
-    background-color: #005bb5;
-  }
-
-  /* Animations */
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
     }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      font-size: 16px;
     }
-  }
-
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Media Queries for responsiveness */
-  @media screen and (max-width: 768px) {
     .container {
-      flex-direction: column;
-      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #1e1e1e;
+      padding: 60px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+      top: 50px;
+      z-index: 2;
+      animation: fadeInUp 1s ease-out;
     }
-
     .profile-pic {
-      width: 200px;
-      height: 200px;
-      margin-right: 0;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid #0073e6;
+      margin-right: 50px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .profile-pic:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(0, 115, 230, 0.7);
+    }
+    .text-content {
+      flex: 1;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #0073e6;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    p {
+      font-size: 1.4rem;
+      margin: 15px 0;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+    .social-links {
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 2.5s forwards;
+    }
+    .social-links a {
+      display: inline-block;
+      background: #0073e6;
+      color: #fff;
+      padding: 12px 24px;
+      margin-right: 12px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .social-links a:hover {
+      background: #005bb5;
+      transform: scale(1.1);
+    }
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      margin-top: 40px;
+      transition: transform 0.3s ease;
+    }
+    section:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    }
+    #about, #skills, #contact {
+      background: #2c2c2c;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      padding: 40px;
+      opacity: 0;
+      animation: fadeInUp 1.5s 1.5s forwards;
+    }
+    section h2 {
+      font-size: 2.6rem;
+      margin-bottom: 25px;
+      color: #0073e6;
+    }
+    section p {
+      font-size: 1.3rem;
+      line-height: 1.7;
       margin-bottom: 20px;
     }
-
-    h1 {
-      font-size: 2.5rem;
+    .project-card {
+      background: #2c2c2c;
+      padding: 25px;
+      margin: 25px;
+      border-radius: 12px;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: inline-block;
+      width: 45%;
+      vertical-align: top;
     }
 
-    .social-links a {
-      padding: 10px 20px;
-      margin-right: 10px;
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    }
+    .project-card h3 {
+      color: #0073e6;
+      font-size: 1.9rem;
+      margin-bottom: 12px;
+    }
+    .project-card p {
       font-size: 1.2rem;
+      margin-bottom: 20px;
     }
-
-    section h2 {
-      font-size: 2.2rem;
+    .project-card button {
+      background-color: #0073e6;
+      padding: 12px 24px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
     }
-
-    .project-card {
+    .project-card button:hover {
+      background-color: #005bb5;
+    }
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      margin: 10px 0;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
     }
-  }
-
-  @media screen and (max-width: 480px) {
-    body {
-      font-size: 14px;
+    .modal-content {
+      background: #333;
+      padding: 40px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 800px;
+      color: white;
     }
-
-    h1 {
-      font-size: 2rem;
+    .modal-content h3 {
+      color: #0073e6;
     }
-
-    .social-links a {
-      padding: 8px 16px;
-      font-size: 1rem;
+    .modal-close {
+      background: #0073e6;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      float: right;
     }
-
-    section h2 {
-      font-size: 2rem;
+    .modal-close:hover {
+      background: #005bb5;
     }
-
-    .project-card {
-      padding: 15px;
-      width: 100%;
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
-  }
-
-</style>
-
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @media screen and (max-width: 768px) {
+      .container { flex-direction: column; padding: 40px; }
+      .profile-pic { width: 200px; height: 200px; margin-right: 0; margin-bottom: 20px; }
+      h1 { font-size: 2.5rem; }
+      .social-links a { padding: 10px 20px; margin-right: 10px; font-size: 1.2rem; }
+      section h2 { font-size: 2.2rem; }
+      .project-card { width: 100%; margin: 10px 0; }
+    }
+    @media screen and (max-width: 480px) {
+      body { font-size: 14px; }
+      h1 { font-size: 2rem; }
+      .social-links a { padding: 8px 16px; font-size: 1rem; }
+      section h2 { font-size: 2rem; }
+      .project-card { padding: 15px; width: 100%; }
+    }
+  </style>
 </head>
 <body>
 
+<!-- Header Section -->
 <div class="container">
     <img src="sp.jfif" alt="Your Name" class="profile-pic" />
     <div class="text-content">
@@ -336,405 +228,70 @@
 <section id="about">
     <h2>About Me</h2>
     <p>
-        Hello, my name is Oliver, and I am a 16-year-old aspiring programmer with a deep passion for technology. My journey began at an early age, and I quickly developed a fascination with programming. I started with Scratch, creating interactive games, before transitioning to Minecraft modding, where I taught myself Java and developed a custom client mod that included various utility features while also managing a small community of players.
+        Hello, my name is Oliver, and I am a 16-year-old aspiring programmer with a deep passion for technology.
+        My journey began at an early age, and I quickly developed a fascination with programming. I started with
+        Scratch before transitioning to Minecraft modding and beyond.
     </p>
     <p>
-        As I continued to learn, I expanded my knowledge by tackling coding challenges and exploring computer science concepts, including algorithms and data structures. I also gained experience in image processing, utilizing OpenCV for tasks such as object and lane detection. Currently, I am focused on developing a 3D engine in Java, incorporating mathematical principles and 3D projections, alongside Swing 2D for the user interface.
+        I continuously learn, explore new challenges, and work on diverse projects ranging from game mods to complex
+        3D engines and computer vision.
     </p>
 </section>
 
 <!-- Skills Section -->
 <section id="skills">
     <h2>Skills</h2>
-    <p>
-        I have built a strong foundation in a variety of programming languages:
-    </p>
+    <p>I have built a strong foundation in a variety of programming languages:</p>
     <ul>
         <li><strong>Java:</strong> Proficient in building robust, scalable applications.</li>
         <li><strong>C#:</strong> Introductory experience from early projects.</li>
         <li><strong>Python:</strong> Solid foundational skills for scripting and automation.</li>
     </ul>
-    <p>
-        I continuously strive to learn and expand my skills to tackle new challenges in software development.
-    </p>
+    <p>I continuously strive to learn and expand my skills to tackle new challenges.</p>
 </section>
-
 
 <!-- Projects Section -->
 <section id="projects">
     <h2>My Projects</h2>
     <div class="project-card">
         <h3>Minecraft Utility Mod</h3>
-        <p>
-            A custom Minecraft mod I developed using Java, adding various utility features to enhance gameplay.
-        </p>
-        <button onclick="showProject('project1')">View Project</button>
+        <p>A custom Minecraft mod developed in Java that adds utility features to enhance gameplay.</p>
+        <button onclick="openModal('minecraft')">View Project</button>
     </div>
     <div class="project-card">
         <h3>3D Engine in Java</h3>
-        <p>
-            A 3D engine built entirely in Java with no external libraries, relying solely on mathematics and 3D projection techniques.
-        </p>
-        <button onclick="showProject('project2')">View Project</button>
+        <p>A 3D engine built entirely in Java using mathematical principles and 3D projection techniques.</p>
+        <button onclick="openModal('engine')">View Project</button>
     </div>
     <div class="project-card">
         <h3>OpenCV Road Lane Detection</h3>
-        <p>
-            A Java Swing application that captures the device screen and processes input using OpenCV algorithms for rendering.
-        </p>
-        <button onclick="showProject('project3')">View Project</button>
+        <p>A Java Swing application that utilizes OpenCV algorithms to process and detect road lanes.</p>
+        <button onclick="openModal('opencv')">View Project</button>
     </div>
 </section>
 
-<section id="project1-details" class="project-details" style="display: none;">
-    <h2>Minecraft Utility Mod Details</h2>
-    <p>
-        This project marked an important step in my coding journey. I developed a custom client mod for Minecraft, offering players a fresh way to experience the game. Managing a community of 30+ players provided practical feedback and helped me refine my skills in Java.
-    </p>
-
-    <h3>FALLENClient Class</h3>
-    <p>
-        The <code>FALLENClient</code> class is the main driver behind the mod's core features. It initializes various modules, settings, and configurations, while also handling the registration of event listeners.
-    </p>
-    <pre><code>
-// FALLENClient Constructor: Initializes various managers and components
-public FALLENClient() {
-    INSTANCE = this;
-    Logger.log(LogState.Normal, "Starting " + this.name + " Client | Version " + this.version);
-    MinecraftForge.EVENT_BUS.register(this);
-    // Register different modules and managers
-    this.moduleManager = new ModuleManager();
-    MinecraftForge.EVENT_BUS.register(moduleManager);
-    // Initialize settings, friends, commands, and more
-    this.friendManager = new FriendManager();
-    MinecraftForge.EVENT_BUS.register(friendManager);
-}
-    </code></pre>
-
-    <h3>Module Class</h3>
-    <p>
-        The <code>Module</code> class defines individual features within the mod, allowing them to be toggled on or off. Each module has a name, category, description, and state (enabled/disabled).
-    </p>
-    <pre><code>
-// Module Constructor: Initializes the module with key properties
-public Module(int bind, String name, Category category, String description) {
-    this.bind = bind;
-    this.name = name;
-    this.category = category;
-    this.description = description;
-    // Set category-specific colors
-    switch (this.category) {
-        case Combat: this.categoryColor = 0xffe53935; break;
-        case Player: this.categoryColor = 0xff64b5f6; break;
-        // Other categories...
-    }
-}
-
-// Toggle module state and manage event bus registration/unregistration
-public void setState(boolean state) {
-    this.toggled = state;
-    onToggle();
-    if (state) onEnable(); else onDisable();
-}
-
-public void onEnable() {
-    MinecraftForge.EVENT_BUS.register(this);
-}
-
-public void onDisable() {
-    MinecraftForge.EVENT_BUS.unregister(this);
-}
-    </code></pre>
-
-    <h3>Module Settings</h3>
-    <p>
-        Modules can have settings associated with them. These settings can be easily added using the <code>addSetting</code> method. This allows for easy customization of the module's behavior.
-    </p>
-    <pre><code>
-// Add settings to the module
-public void addSetting(Setting setting) {
-    FALLENClient.INSTANCE.getSettingManager().addSetting(setting);
-}
-    </code></pre>
-
-    <h2>Example: Flight Module Details</h2>
-    <p>
-        This module offers a customizable flight experience in Minecraft. It incorporates speed adjustments for advanced flight mechanics.
-    </p>
-
-    <h3>Flight Class</h3>
-    <p>
-        The <code>Flight</code> class manages the logic for the flight functionality and player movement.
-    </p>
-    <pre><code>
-public Flight(int bind, String name, String displayName, Category category, String description) {
-    super(bind, name, displayName, category, description);
-}
-
-@SubscribeEvent
-public void onTick(TickEvent.PlayerTickEvent event) {
-    if (mc.player == null || mc.player.getRidingEntity() != null) return;
-    double[] dir = MathUtils.directionSpeed(baseSpeed.getValDouble());
-    if (mc.gameSettings.keyBindJump.isKeyDown()) {
-        mc.player.setMotion(mc.player.getMotion().x, upSpeed.getValDouble(), mc.player.getMotion().z);
-    }
-}
-    </code></pre>
-
-    <p>
-        There is much more to showcase, and I plan to provide further details soon.
-    </p>
-    <button onclick="backToProjects()">Back to Projects</button>
-</section>
-
-
-
-
-<section id="project2-details" class="project-details" style="display: none;">
-    <h2>3D Engine in Java Details</h2>
-    <h3>GameEngine</h3>
-    <p>
-        At first, I wasn't sure why I chose this project, but I was looking for something that would keep me learning and improving over time. I decided to build a 3D engine in Java without relying on any external libraries—just math and Swing 2D. The project was surprisingly quick to get off the ground, thanks to resources that laid down the foundation. From there, it was all about troubleshooting and refinement, but the core structure was already set up. Here’s what I have so far:
-    </p>
-
-    <h4>Core Components</h4>
-    <p>
-        The engine consists of several key classes that handle various aspects of the 3D world:
-    </p>
-
-    <h5>Camera Class</h5>
-    <p>
-        The <code>Camera</code> class is responsible for the position, orientation, and movement of the camera in the 3D world. The camera’s update method handles movement based on keyboard input:
-    </p>
-    <pre><code>
-public void update(double delta) {
-    if (keyboard.isKeyDown(KeyEvent.VK_W)) {
-        x += Math.cos(yaw) * speed * delta;
-        z += Math.sin(yaw) * speed * delta;
-    }
-    if (keyboard.isKeyDown(KeyEvent.VK_S)) {
-        x -= Math.cos(yaw) * speed * delta;
-        z -= Math.sin(yaw) * speed * delta;
-    }
-}
-    </code></pre>
-    <p>
-        This logic updates the camera’s position when the "W" or "S" keys are pressed, moving the camera in the 3D space based on its current orientation (yaw).
-    </p>
-
-    <h5>Renderer Class</h5>
-    <p>
-        The <code>Renderer</code> class handles the transformation of vertices and the drawing of objects in the scene. A key optimization in this class is caching values like trigonometric values for yaw and pitch to avoid unnecessary recalculations:
-    </p>
-    <pre><code>
-private void updateTrigonometricValues() {
-    cachedYaw = camera.yaw;
-    cachedPitch = camera.pitch;
-    cachedCosYaw = Math.cos(cachedYaw);
-    cachedSinYaw = Math.sin(cachedYaw);
-    cachedCosPitch = Math.cos(cachedPitch);
-    cachedSinPitch = Math.sin(cachedPitch);
-    valuesCached = true;
-}
-    </code></pre>
-    <p>
-        The <code>drawWireframeGameObject</code> method is responsible for rendering objects in wireframe mode:
-    </p>
-    <pre><code>
-private void drawWireframeGameObject(Graphics2D g2d, GameObject gameObject, double[][] vertices, int[][] edges, int width, int height, double cameraHeight) {
-    g2d.setColor(gameObject.getColor());
-    for (int[] edge : edges) {
-        double[] v1 = vertices[edge[0]];
-        double[] v2 = vertices[edge[1]];
-        int[] p1 = project(v1, width, height, cameraHeight);
-        int[] p2 = project(v2, width, height, cameraHeight);
-        g2d.drawLine(p1[0], p1[1], p2[0], p2[1]);
-    }
-}
-    </code></pre>
-    <p>
-        This method draws each edge between vertices of a game object on the screen using 2D lines, creating a wireframe effect.
-    </p>
-
-    <h5>GameObject Class</h5>
-    <p>
-        The <code>GameObject</code> class represents an object in the 3D world. It manages transformation (position, rotation, scaling) and the hierarchical structure of objects (parent-child relationships). A key method in this class is <code>getWorldTransform</code>, which calculates the object's world transformation based on its parent’s transformation:
-    </p>
-    <pre><code>
-public Matrix4 getWorldTransform() {
-    if (parent != null) {
-        return parent.getWorldTransform().multiply(transform.getTransformationMatrix());
-    }
-    return transform.getTransformationMatrix();
-}
-    </code></pre>
-    <p>
-        This logic ensures that the world transformation is recursively applied, considering the parent-child relationships in the object hierarchy.
-    </p>
-    <p>
-        Additionally, the <code>getTransformedVertices</code> method applies the transformation matrix to the object’s vertices:
-    </p>
-    <pre><code>
-public double[][] getTransformedVertices() {
-    double[][] originalVertices = getVertices();
-    double[][] transformedVertices = new double[originalVertices.length][3];
-
-    for (int i = 0; i < originalVertices.length; i++) {
-        Vector3 vertex = new Vector3(originalVertices[i][0], originalVertices[i][1], originalVertices[i][2]);
-        Vector3 transformed = transform.getTransformationMatrix().transform(vertex);
-
-        transformedVertices[i][0] = transformed.x;
-        transformedVertices[i][1] = transformed.y;
-        transformedVertices[i][2] = transformed.z;
-    }
-
-    return transformedVertices;
-}
-    </code></pre>
-    <p>
-        This method ensures that all vertices are properly transformed and ready for rendering.
-    </p>
-
-    <h5>GameObject’s Texture</h5>
-    <p>
-        In addition to transformations, <code>GameObject</code> can also load textures. Here's how the <code>setTexture</code> method is used to load a texture:
-    </p>
-    <pre><code>
-public void setTexture(BufferedImage texture) {
-    this.texture = texture;
-}
-    </code></pre>
-    <p>
-        The texture is then applied during the rendering process, enhancing the visual quality of the objects in the game world.
-    </p>
-
-    <h5>Object Simplification</h5>
-    <p>
-        To optimize performance, the <code>Renderer</code> simplifies object vertices based on their distance from the camera. This reduces the precision of distant objects, improving render speed:
-    </p>
-    <pre><code>
-private double[][] simplifyVertices(double[][] vertices, double distance) {
-    int precision = (int) Math.max(1, Math.min(4, Math.log10(distance) - 1));
-    return simplifyVerticesByPrecision(vertices, precision);
-}
-    </code></pre>
-    <p>
-        This method adjusts the level of detail for objects based on how far they are from the camera, ensuring efficient rendering.
-    </p>
-
-    <h5>Renderer's Projection</h5>
-    <p>
-        The <code>project</code> method is responsible for projecting 3D vertices into 2D screen space:
-    </p>
-    <pre><code>
-private int[] project(double[] v, int width, int height, double cameraHeight) {
-    double vx = v[0] - camera.x;
-    double vy = v[1] - (camera.y + cameraHeight);
-    double vz = v[2] - camera.z;
-
-    double x = vx * cachedCosYaw + vz * cachedSinYaw;
-    double z = -vx * cachedSinYaw + vz * cachedCosYaw;
-
-    double y = vy * cachedCosPitch + z * cachedSinPitch;
-    double depthZ = -vy * cachedSinPitch + z * cachedCosPitch;
-
-    depthZ = Math.max(depthZ, Float.MIN_VALUE);
-
-    double invZ = gameEngine.clickGUI.getFOVSlider().getValue() / depthZ;
-    int screenX = (int) (x * invZ + width / 2);
-    int screenY = (int) (-y * invZ + height / 2);
-
-    return new int[]{screenX, screenY};
-}
-    </code></pre>
-    <p>
-        This method uses the camera's orientation and position to project the 3D world onto the 2D screen space, creating the illusion of depth.
-    </p>
-
-    <h4>Challenges & Future Work</h4>
-    <p>
-        While the engine is functional, there's still a lot of room for improvement. Optimization is a big focus right now, and I plan to add more features like texture mapping, physics, and lighting. The goal is to continue building and refining the engine to make it more capable and efficient.
-    </p>
-
-    <button onclick="backToProjects()">Back to Projects</button>
-</section>
-
-<section id="project3-details" class="project-details" style="display: none;">
-    <h2>OpenCV Road Lane Detection</h2>
-    <p>
-        I first started this project attempting to achieve this without any external libraries. However, I soon realized that the mathematics involved was overwhelmingly complex to implement manually. As a result, I adopted OpenCV and took the time to learn its functionalities. I used a standard pipeline for image processing.
-    </p>
-
-    <h4>Screen Capture and Processing</h4>
-    <p>
-        This function captures the screen in real-time using Java's <code>Robot</code> class.
-        It takes a screenshot of the entire display, processes the image to detect lanes,
-        and then updates the displayed frame. The detected lanes are drawn over the captured
-        image before being shown on the screen. The process repeats continuously with a timer,
-        providing live lane detection feedback.
-    </p>
-    <pre><code>
-private void displayScreenCapture() {
-    try {
-        Robot robot = new Robot();
-        Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
-        BufferedImage screenCapture = robot.createScreenCapture(screenRect);
-        BufferedImage detectedImage = scan(screenCapture);
-        screenLabel.setIcon(new ImageIcon(detectedImage.getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH)));
-    } catch (Exception ex) {
-        ex.printStackTrace();
-    }
-}
-</code></pre>
-
-    <h4>Lane Detection Pipeline</h4>
-    <p>
-        The core of the lane detection process, this function applies several computer vision techniques
-        to extract road lanes from the captured image:
-    </p>
-    <ul>
-        <li><strong>Convert to Grayscale</strong> – Removes color information to simplify processing.</li>
-        <li><strong>Apply Gaussian Blur</strong> – Reduces noise and smooths the image.</li>
-        <li><strong>Canny Edge Detection</strong> – Identifies strong edges in the image, highlighting potential lane markings.</li>
-        <li><strong>Region of Interest Masking</strong> – Focuses processing on the road by filtering out irrelevant parts of the image.</li>
-        <li><strong>Hough Line Transform</strong> – Detects lane lines by identifying straight-line segments in the processed image.</li>
-        <li><strong>Lane Drawing</strong> – The detected lane lines are separated into left and right lanes, then drawn onto the frame.</li>
-    </ul>
-    <pre><code>
-private BufferedImage scan(BufferedImage image) {
-    Mat frame = bufferedImageToMat(image);
-    Imgproc.cvtColor(frame, gray, Imgproc.COLOR_BGR2GRAY);
-    Imgproc.GaussianBlur(gray, blur, new Size(5, 5), 0);
-    Imgproc.Canny(blur, edges, 100, 200);
-    Core.bitwise_and(edges, mask, roiEdges);
-    Imgproc.HoughLinesP(roiEdges, lines, 1, Math.PI / 180, 50, 30, 10);
-    drawLane(result, leftLines, new Scalar(255, 0, 0)); // Blue for left lane
-    drawLane(result, rightLines, new Scalar(0, 255, 0)); // Green for right lane
-    return matToBufferedImage(result);
-}
-</code></pre>
-
-    <h4>Drawing Lanes</h4>
-    <p>
-        Once the lane lines are detected, they need to be drawn onto the image. This function ensures that:
-    </p>
-    <ul>
-        <li>The detected lines are filtered and grouped into left and right lanes.</li>
-        <li>A polynomial fitting technique is used to estimate smooth lane curves.</li>
-        <li>The final lanes are drawn onto the processed image using OpenCV's <code>Imgproc.line</code> function.</li>
-    </ul>
-    <pre><code>
-private void drawLane(Mat frame, java.util.Listdouble lines, Scalar color) {
-    if (lines.isEmpty()) return;
-    MatOfPoint matPoints = new MatOfPoint(points.toArray(new Point[0]));
-    Imgproc.fitLine(matPoints, lineParams, Imgproc.DIST_L2, 0, 0.01, 0.01);
-    Imgproc.line(frame, new Point(xStart, yStart), new Point(xEnd, yEnd), color, 5);
-}
-</code></pre>
-
-    <button onclick="backToProjects()">Back to Projects</button>
-</section>
-
+<!-- Project Modal -->
+<div id="minecraft" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('minecraft')">Close</button>
+        <h3>Minecraft Utility Mod</h3>
+        <p>https://github.com/OliverEvans08/Fallen-Minecraft-Utility-Mod</p>
+    </div>
+</div>
+<div id="engine" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('engine')">Close</button>
+        <h3>3D Engine in Java</h3>
+        <p>https://github.com/OliverEvans08/ZBuffer</p>
+    </div>
+</div>
+<div id="opencv" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('opencv')">Close</button>
+        <h3>OpenCV Road Lane Detection</h3>
+        <p>Not yet!</p>
+    </div>
+</div>
 
 <!-- Contact Section -->
 <section id="contact">
@@ -744,19 +301,17 @@ private void drawLane(Mat frame, java.util.Listdouble lines, Scalar color) {
     </p>
     <p>Email: <a href="mailto:your.email@example.com" style="color: #0073e6;">your.email@example.com</a></p>
 </section>
+</body>
 
 <script>
-    function showProject(projectId) {
-      document.getElementById('projects').style.display = 'none';
-      document.getElementById(projectId + '-details').style.display = 'block';
-    }
-    function backToProjects() {
-      const details = document.getElementsByClassName('project-details');
-      for (let i = 0; i < details.length; i++) {
-        details[i].style.display = 'none';
-      }
-      document.getElementById('projects').style.display = 'block';
-    }
-  </script>
-</body>
+function openModal(projectId) {
+    document.getElementById(projectId).style.display = "flex";
+    document.body.style.overflow = "hidden";  // Disable page scrolling
+}
+
+function closeModal(projectId) {
+    document.getElementById(projectId).style.display = "none";
+    document.body.style.overflow = "auto";  // Enable page scrolling again
+}
+</script>
 </html>
