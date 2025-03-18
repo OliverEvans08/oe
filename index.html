@@ -5,206 +5,260 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Oliver Evans - Portfolio</title>
     <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
-    }
-    body {
-      background-color: #121212;
-      color: #e0e0e0;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-    .container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      background: #1e1e1e;
-      padding: 60px;
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-      position: relative;
-      top: 50px;
-      z-index: 2;
-      animation: fadeInUp 1s ease-out;
-    }
-    .profile-pic {
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 6px solid #0073e6;
-      margin-right: 50px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .profile-pic:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px rgba(0, 115, 230, 0.7);
-    }
-    .text-content {
-      flex: 1;
-    }
-    h1 {
-      font-size: 3rem;
-      color: #0073e6;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-    p {
-      font-size: 1.4rem;
-      margin: 15px 0;
-      line-height: 1.6;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-    }
-    .social-links {
-      margin-top: 20px;
-      opacity: 0;
-      animation: fadeIn 2.5s forwards;
-    }
-    .social-links a {
-      display: inline-block;
-      background: #0073e6;
-      color: #fff;
-      padding: 12px 24px;
-      margin-right: 12px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s, transform 0.3s;
-    }
-    .social-links a:hover {
-      background: #005bb5;
-      transform: scale(1.1);
-    }
-    section {
-      padding: 80px 20px;
-      text-align: center;
-      margin-top: 40px;
-      transition: transform 0.3s ease;
-    }
-    section:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-    }
-    #about, #skills, #contact {
-      background: #2c2c2c;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-      padding: 40px;
-      opacity: 0;
-      animation: fadeInUp 1.5s 1.5s forwards;
-    }
-    section h2 {
-      font-size: 2.6rem;
-      margin-bottom: 25px;
-      color: #0073e6;
-    }
-    section p {
-      font-size: 1.3rem;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-    .project-card {
-      background: #2c2c2c;
-      padding: 25px;
-      margin: 25px;
-      border-radius: 12px;
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s, box-shadow 0.3s;
-      display: inline-block;
-      width: 45%;
-      vertical-align: top;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    .project-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+body {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  background: #27293d;
+  padding: 60px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #62a8ea;
+  margin-right: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(98, 168, 234, 0.8);
+}
+
+.text-content {
+  flex: 1;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #62a8ea;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  animation: fadeIn 1s ease-in-out;
+}
+
+p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  line-height: 1.6;
+  color: #bbb;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.social-links {
+  margin-top: 20px;
+  animation: fadeInUp 1.4s ease-out;
+}
+
+.social-links a {
+  display: inline-block;
+  background: #62a8ea;
+  color: #fff;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+  background: #4a8ac7;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+  margin: 40px auto;
+  transition: transform 0.3s ease;
+  background: #27293d;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  width: 90%;
+  max-width: 1200px;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+#about, #skills, #contact {
+  padding: 40px;
+  animation: fadeInUp 1s ease-out;
+}
+
+section h2 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+  color: #62a8ea;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #bbb;
+}
+
+.project-card {
+  background: #2c2c2c;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: inline-block;
+  width: 45%;
+  vertical-align: top;
+  text-align: left;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.project-card h3 {
+  color: #62a8ea;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.project-card p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #ddd;
+}
+
+.project-card button {
+  background-color: #62a8ea;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  font-weight: 500;
+}
+
+.project-card button:hover {
+  background-color: #4a8ac7;
+  transform: translateY(-2px);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: #333;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 700px;
+  color: white;
+}
+
+.modal-content h3 {
+  color: #62a8ea;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.modal-close {
+  background: #62a8ea;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+  transition: background 0.3s;
+}
+
+.modal-close:hover {
+  background: #4a8ac7;
+}
+
+@keyframes fadeIn {
+   0% { opacity: 0; }
+   100% { opacity: 1; }
+}
+
+    .tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
     }
-    .project-card h3 {
-      color: #0073e6;
-      font-size: 1.9rem;
-      margin-bottom: 12px;
+    .tab-button {
+        background: #62a8ea;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 0 5px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: background 0.3s ease;
     }
-    .project-card p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+    .tab-button:hover, .tab-button.active {
+        background: #4a8ac7;
     }
-    .project-card button {
-      background-color: #0073e6;
-      padding: 12px 24px;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
+    .tab-content {
+        display: none;
     }
-    .project-card button:hover {
-      background-color: #005bb5;
-    }
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 100;
-    }
-    .modal-content {
-      background: #333;
-      padding: 40px;
-      border-radius: 10px;
-      width: 80%;
-      max-width: 800px;
-      color: white;
-    }
-    .modal-content h3 {
-      color: #0073e6;
-    }
-    .modal-close {
-      background: #0073e6;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      float: right;
-    }
-    .modal-close:hover {
-      background: #005bb5;
-    }
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @media screen and (max-width: 768px) {
-      .container { flex-direction: column; padding: 40px; }
-      .profile-pic { width: 200px; height: 200px; margin-right: 0; margin-bottom: 20px; }
-      h1 { font-size: 2.5rem; }
-      .social-links a { padding: 10px 20px; margin-right: 10px; font-size: 1.2rem; }
-      section h2 { font-size: 2.2rem; }
-      .project-card { width: 100%; margin: 10px 0; }
-    }
-    @media screen and (max-width: 480px) {
-      body { font-size: 14px; }
-      h1 { font-size: 2rem; }
-      .social-links a { padding: 8px 16px; font-size: 1rem; }
-      section h2 { font-size: 2rem; }
-      .project-card { padding: 15px; width: 100%; }
+    .tab-content.active {
+        display: block;
     }
   </style>
 </head>
@@ -241,13 +295,36 @@
 <!-- Skills Section -->
 <section id="skills">
     <h2>Skills</h2>
-    <p>I have built a strong foundation in a variety of programming languages:</p>
-    <ul>
-        <li><strong>Java:</strong> Proficient in building robust, scalable applications.</li>
-        <li><strong>C#:</strong> Introductory experience from early projects.</li>
-        <li><strong>Python:</strong> Solid foundational skills for scripting and automation.</li>
-    </ul>
-    <p>I continuously strive to learn and expand my skills to tackle new challenges.</p>
+    <div class="tabs">
+        <button class="tab-button active" onclick="showTab('languages')">Languages</button>
+        <button class="tab-button" onclick="showTab('tools')">Tools</button>
+        <button class="tab-button" onclick="showTab('frameworks')">Frameworks</button>
+    </div>
+
+    <div id="languages" class="tab-content active">
+        <ul>
+            <li><strong>Java:</strong> Proficient in building robust, scalable applications.</li>
+            <li><strong>C#:</strong> Introductory experience from early projects.</li>
+            <li><strong>Python:</strong> Solid foundational skills for scripting and automation.</li>
+        </ul>
+    </div>
+
+    <div id="tools" class="tab-content">
+        <ul>
+            <li><strong>Git & GitHub:</strong> Version control and collaborative development.</li>
+            <li><strong>IntelliJ IDEA:</strong> Primary integrated development environment (IDE) for Java.</li>
+            <li><strong>Windows:</strong> Comfortable with system administration, troubleshooting, and scripting.</li>
+        </ul>
+    </div>
+
+    <div id="frameworks" class="tab-content">
+        <ul>
+            <li><strong>Java SE (Standard Edition):</strong> Core Java libraries used for application development.</li>
+            <li><strong>Swing & JavaFX:</strong> GUI development for desktop applications.</li>
+            <li><strong>OpenCV:</strong> Computer vision and image processing.</li>
+            <li><strong>Selenium:</strong> Browser automation and web testing.</li>
+        </ul>
+    </div>
 </section>
 
 <!-- Projects Section -->
@@ -275,6 +352,8 @@
     <div class="modal-content">
         <button class="modal-close" onclick="closeModal('minecraft')">Close</button>
         <h3>Minecraft Utility Mod</h3>
+        <h2>The beginning</h2>
+        <p>If you were a 2000s kid, one of your first games was Minecraft. That was the case for me. I started just like any other kid—playing around, building, and enjoying the game. It wasn't until I was around 12 that I started looking into making datapacks. Funny thing is, I never got it working, but I knew it involved coding. Having some experience with Scratch, I put something together that was basically just little scripts. This eventually led me to discover Forge, a modding API for Minecraft. I created a few projects, and Fallen (the name of the client) was originally a fork of an existing client. But then I removed the base and made it entirely my own. The client was originally for version 1.12.2, and now it's updated for 1.16.5. It's full of features, and I'll go through some of the code.</p>
         <p>https://github.com/OliverEvans08/Fallen-Minecraft-Utility-Mod</p>
     </div>
 </div>
@@ -299,7 +378,7 @@
     <p>
         If you'd like to get in touch or discuss potential collaborations, feel free to reach out!
     </p>
-    <p>Email: <a href="mailto:your.email@example.com" style="color: #0073e6;">your.email@example.com</a></p>
+    <p>Email: <a href="mailto:Oliverevans0508@gmail.com" style="color: #0073e6;">Oliverevans0508@gmail.com</a></p>
 </section>
 </body>
 
@@ -313,5 +392,13 @@ function closeModal(projectId) {
     document.getElementById(projectId).style.display = "none";
     document.body.style.overflow = "auto";  // Enable page scrolling again
 }
+
+    function showTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+        document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
+
+        document.getElementById(tabId).classList.add('active');
+        document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
+    }
 </script>
 </html>
