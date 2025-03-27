@@ -207,6 +207,8 @@ section p {
   width: 80%;
   max-width: 700px;
   color: white;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 .modal-content h3 {
@@ -260,6 +262,13 @@ section p {
     .tab-content.active {
         display: block;
     }
+    .skill-logo {
+    width: 30px; /* Set the size of the logo */
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle; /* Ensures the logo aligns properly with the text */
+}
+
   </style>
 </head>
 <body>
@@ -303,29 +312,60 @@ section p {
 
     <div id="languages" class="tab-content active">
         <ul>
-            <li><strong>Java:</strong> Proficient in building robust, scalable applications.</li>
-            <li><strong>C#:</strong> Introductory experience from early projects.</li>
-            <li><strong>Python:</strong> Solid foundational skills for scripting and automation.</li>
+            <li>
+                <img src="https://svgl.app/library/java.svg" alt="Java Logo" class="skill-logo">
+                <strong>Java:</strong> Proficient in building robust, scalable applications.
+            </li>
+            <li>
+                <img src="https://svgl.app/library/csharp.svg" alt="C# Logo" class="skill-logo">
+                <strong>C#:</strong> Introductory experience from early projects.
+            </li>
+            <li>
+                <img src="https://svgl.app/library/python.svg" alt="Python Logo" class="skill-logo">
+                <strong>Python:</strong> Solid foundational skills for scripting and automation.
+            </li>
         </ul>
     </div>
 
     <div id="tools" class="tab-content">
         <ul>
-            <li><strong>Git & GitHub:</strong> Version control and collaborative development.</li>
-            <li><strong>IntelliJ IDEA:</strong> Primary integrated development environment (IDE) for Java.</li>
-            <li><strong>Windows:</strong> Comfortable with system administration, troubleshooting, and scripting.</li>
+            <li>
+                <img src="https://svgl.app/library/git.svg" alt="Git Logo" class="skill-logo">
+                <strong>Git & GitHub:</strong> Version control and collaborative development.
+            </li>
+            <li>
+                <img src="https://svgl.app/library/intellijidea.svg" alt="IntelliJ IDEA Logo" class="skill-logo">
+                <strong>IntelliJ IDEA:</strong> Primary integrated development environment (IDE) for Java.
+            </li>
+            <li>
+                <img src="https://svgl.app/library/windows.svg" alt="Windows Logo" class="skill-logo">
+                <strong>Windows:</strong> Comfortable with system administration, troubleshooting, and scripting.
+            </li>
         </ul>
     </div>
 
     <div id="frameworks" class="tab-content">
         <ul>
-            <li><strong>Java SE (Standard Edition):</strong> Core Java libraries used for application development.</li>
-            <li><strong>Swing & JavaFX:</strong> GUI development for desktop applications.</li>
-            <li><strong>OpenCV:</strong> Computer vision and image processing.</li>
-            <li><strong>Selenium:</strong> Browser automation and web testing.</li>
+            <li>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIUubF0PdzFfuV8H3r03OXIU2o5-42UzC8zA&s" alt="Java SE Logo" class="skill-logo">
+                <strong>Java SE (Standard Edition):</strong> Core Java libraries used for application development.
+            </li>
+            <li>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXTI-_yrXyGGlBmNO7aWioTT9DEtfpDe8eRA&s" alt="Swing Logo" class="skill-logo">
+                <strong>Swing & JavaFX:</strong> GUI development for desktop applications.
+            </li>
+            <li>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1cV6JpoCif27ekKZfeQVOkdLFZBEyNes4cw&s" alt="OpenCV Logo" class="skill-logo">
+                <strong>OpenCV:</strong> Computer vision and image processing.
+            </li>
+            <li>
+                <img src="https://miro.medium.com/v2/resize:fit:1400/1*musVE9e4bgjTWeoRmc-P_w.png" alt="Selenium Logo" class="skill-logo">
+                <strong>Selenium:</strong> Browser automation and web testing.
+            </li>
         </ul>
     </div>
 </section>
+
 
 <!-- Projects Section -->
 <section id="projects">
@@ -354,6 +394,11 @@ section p {
         <h3>Minecraft Utility Mod</h3>
         <h2>The beginning</h2>
         <p>If you were a 2000s kid, one of your first games was Minecraft. That was the case for me. I started just like any other kid—playing around, building, and enjoying the game. It wasn't until I was around 12 that I started looking into making datapacks. Funny thing is, I never got it working, but I knew it involved coding. Having some experience with Scratch, I put something together that was basically just little scripts. This eventually led me to discover Forge, a modding API for Minecraft. I created a few projects, and Fallen (the name of the client) was originally a fork of an existing client. But then I removed the base and made it entirely my own. The client was originally for version 1.12.2, and now it's updated for 1.16.5. It's full of features, and I'll go through some of the code.</p>
+        <p>So, how do you create mods for Minecraft? Since Minecraft is made in Java, there are multiple APIs available for modding. I used Forge, a free and open-source modding API for Minecraft. I wanted to create a "hacked client"-style mod, which required building a GUI. The early versions of Fallen were actually a fork of an existing mod called Wurst. The GUI, known as a ClickGUI, looked something like this:</p>
+
+        <!-- Add your image here -->
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgYEMfvf5q1XiU4WLaMqSljU4_rcRe1e8kfg&s" alt="Fallen Minecraft Mod GUI" style="width: 100%; height: auto; border-radius: 8px; margin-top: 20px;" />
+
         <p>https://github.com/OliverEvans08/Fallen-Minecraft-Utility-Mod</p>
     </div>
 </div>
