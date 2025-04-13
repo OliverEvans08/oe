@@ -269,6 +269,20 @@ section p {
     vertical-align: middle; /* Ensures the logo aligns properly with the text */
 }
 
+pre {
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+code {
+    font-family: 'Courier New', monospace;
+}
+
   </style>
 </head>
 <body>
@@ -307,7 +321,7 @@ section p {
     <div class="tabs">
         <button class="tab-button active" onclick="showTab('languages')">Languages</button>
         <button class="tab-button" onclick="showTab('tools')">Tools</button>
-        <button class="tab-button" onclick="showTab('frameworks')">Frameworks</button>
+        <button class="tab-button" onclick="showTab('libraries')">Libraries</button>
     </div>
 
     <div id="languages" class="tab-content active">
@@ -344,7 +358,7 @@ section p {
         </ul>
     </div>
 
-    <div id="frameworks" class="tab-content">
+    <div id="libraries" class="tab-content">
         <ul>
             <li>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIUubF0PdzFfuV8H3r03OXIU2o5-42UzC8zA&s" alt="Java SE Logo" class="skill-logo">
@@ -393,15 +407,38 @@ section p {
         <button class="modal-close" onclick="closeModal('minecraft')">Close</button>
         <h3>Minecraft Utility Mod</h3>
         <h2>The beginning</h2>
-        <p>If you were a 2000s kid, one of your first games was Minecraft. That was the case for me. I started just like any other kid—playing around, building, and enjoying the game. It wasn't until I was around 12 that I started looking into making datapacks. Funny thing is, I never got it working, but I knew it involved coding. Having some experience with Scratch, I put something together that was basically just little scripts. This eventually led me to discover Forge, a modding API for Minecraft. I created a few projects, and Fallen (the name of the client) was originally a fork of an existing client. But then I removed the base and made it entirely my own. The client was originally for version 1.12.2, and now it's updated for 1.16.5. It's full of features, and I'll go through some of the code.</p>
-        <p>So, how do you create mods for Minecraft? Since Minecraft is made in Java, there are multiple APIs available for modding. I used Forge, a free and open-source modding API for Minecraft. I wanted to create a "hacked client"-style mod, which required building a GUI. The early versions of Fallen were actually a fork of an existing mod called Wurst. The GUI, known as a ClickGUI, looked something like this:</p>
+        <p>If you were a 2000s kid, one of your first games was probably Minecraft. For me, it was the gateway to a whole new world of gaming and creativity. I started just like most other players—exploring the world, building massive structures, and getting lost in the infinite possibilities the game had to offer. But it wasn’t until I was around 12 that I started diving deeper into Minecraft’s mechanics, specifically creating my own custom datapacks. At the time, I didn't really know how to make them work, but I knew there was coding involved. Armed with some basic knowledge from Scratch, I started experimenting with small scripts. Eventually, this exploration led me to discover Forge, a powerful modding API for Minecraft. What began as a small personal project quickly grew into something bigger.</p>
 
-        <!-- Add your image here -->
+        <p>Initially, I decided to create a modded client called "Fallen" based on a mod I found called Wurst. The original idea was to build something that resembled a "hacked client"—a tool that would give players some advantage in the game. But over time, I realized I wanted to make it my own. I stripped away the base code from Wurst and began rebuilding the project from scratch. The first version of Fallen was for Minecraft 1.12.2, but as the game evolved, so did the mod. I continued to update and improve the project, and it’s now compatible with Minecraft 1.16.5, packed with new features and improvements.</p>
+
+        <p>So, how do you create mods for Minecraft? Since Minecraft is built in Java, there are a variety of APIs available for modding. The most popular and widely used one is Forge, which is both free and open-source. I decided to use this API to build my mod, aiming to create a “hacked client”-style mod. The challenge here was to not only manipulate the game’s mechanics but also to design a user-friendly interface that players could interact with. This led to the development of the mod’s GUI, known as the ClickGUI, which allowed players to easily toggle features and tweak settings. Early versions of Fallen were heavily inspired by Wurst, but the mod eventually grew into its own, incorporating more customizations and an improved, user-friendly design. Here’s what the ClickGUI looked like in action:</p>
+
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgYEMfvf5q1XiU4WLaMqSljU4_rcRe1e8kfg&s" alt="Fallen Minecraft Mod GUI" style="width: 100%; height: auto; border-radius: 8px; margin-top: 20px;" />
 
-        <p>https://github.com/OliverEvans08/Fallen-Minecraft-Utility-Mod</p>
+        <p>In this ClickGUI, you can see how players can easily toggle different modules, adjust values, and manage game settings to suit their preferences. This made the mod a versatile tool that could be customized for various playstyles. Now, let’s take a deeper dive into how some of the code works behind the scenes:</p>
+
+        <pre><code>
+            public final class AutoSprintHack extends Module {
+
+    public AutoSprintHack(int bind, String name, String displayName, Category category, String description) {
+        super(bind, name, displayName, category, description);
+    }
+
+    @SubscribeEvent
+    public void onTick(TickEvent.PlayerTickEvent event) {
+            mc.gameSettings.keyBindSprint.setPressed(true);
+    }
+}
+        </code></pre>
+
+        <p>This snippet of code demonstrates how the AutoSprintHack module functions. Essentially, it's a simple script that forces the sprint key to be pressed automatically during gameplay. In this code, you can see the class constructor that initializes the module, as well as the event handler that runs on each game tick. The <code>@SubscribeEvent</code> annotation tells Minecraft to trigger the method <code>onTick()</code> whenever a player’s tick event occurs in the game loop. This is how Minecraft modding APIs like Forge allow us to interact with the game’s internal events, enabling us to add custom behavior like automatic sprinting. </p>
+
+        <p>If you’re interested in diving deeper into the code, feel free to check out the full project on GitHub. I’ve made it available for others to explore, learn from, and potentially contribute to:</p>
+
+        <p><a href="https://github.com/OliverEvans08/Fallen-Minecraft-Utility-Mod" target="_blank">https://github.com/OliverEvans08/Fallen-Minecraft-Utility-Mod</a></p>
     </div>
 </div>
+
 <div id="engine" class="modal">
     <div class="modal-content">
         <button class="modal-close" onclick="closeModal('engine')">Close</button>
